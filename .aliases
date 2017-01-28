@@ -1,0 +1,14 @@
+export "Loading ZSH aliases"
+
+# Set emacs as editor
+alias e="emacs"
+
+alias delve="delve --transform-func ns_data_utils.unreference:unreference_dload"
+alias vpc-lsi="lsi -s -t gbernsleone@vpc-bastion.n-s.us"
+
+alias ll="ls -lAhl"
+alias con="tail -40 -f /var/log/system.log"
+alias fuck='sudo $(history -p \!\!)'
+
+bindkey "^[[A" history-beginning-search-backward
+bindkey "^[[B" history-beginning-search-forward

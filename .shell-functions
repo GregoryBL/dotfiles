@@ -1,0 +1,22 @@
+echo "Loading shell functions"
+
+function setpass() {
+  count=0
+  echo -n "Enter password for $NIX_BINARY_CACHE_USERNAME: "
+  read -s NIX_BINARY_CACHE_PASSWORD
+  export NIX_BINARY_CACHE_PASSWORD
+  if ! curl -s --fail $NIX_REPO_HTTP/nix-cache-info >/dev/null \
+    -u "$NIX_BINARY_CACHE_USERNAME:$NIX_BINARY_CACHE_PASSWORD"; then
+    echo "Wrong password :("
+    count=$((count+1))
+    if [ $count -lt 5 ]
+    then
+      setpass
+    else
+      echo "Too many tries. Quitting."
+      return 1
+    fi
+  else
+    echo "OK!"
+  fi
+}
