@@ -1,4 +1,4 @@
-export "Loading ZSH aliases"
+echo "Loading ZSH aliases"
 
 # Set emacs as editor
 alias e="emacs"
