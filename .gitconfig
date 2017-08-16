@@ -1,7 +1,8 @@
 [user]
-  name = Gregory Berns-Leone
+  name = Greg Berns-Leone
   email = gbernsleone@narrativescience.com
 [core]
+  editor = emacs
   # Excludesfiles allows us to set a global list of things to ignore
   excludesfile = ~/.gitignore_global
 [credential]
@@ -20,7 +21,6 @@
 # Aliases are command shortcuts
 [alias]
   co = checkout
-
   # lg is now a shortcut for a pretty log with short commit messages
   # See the log manpage: https://www.kernel.org/pub/software/scm/git/docs/git-log.html
   # for explanations of what these options do
@@ -49,3 +49,7 @@
   username = ns-gbernsleone
 [push]
   default = current
+[status]
+  submoduleSummary = true
+[diff]
+  submodule = log
