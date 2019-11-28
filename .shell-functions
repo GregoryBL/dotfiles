@@ -20,3 +20,14 @@ function setpass() {
     echo "OK!"
   fi
 }
+
+function gsu() {
+  echo -n "Updating submodules..."
+  git submodule update --recursive --quiet
+  echo "done"
+}
+
+function set-upstream() {
+  BRANCH=$(git rev-parse --abbrev-ref HEAD)
+  git branch --set-upstream-to=origin/$BRANCH
+}

@@ -49,6 +49,7 @@
   username = ns-gbernsleone
 [push]
   default = current
+  recurseSubmodules = check
 [status]
   submoduleSummary = true
 [diff]
